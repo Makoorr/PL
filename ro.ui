@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1133</width>
+    <height>686</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:292, stop:0.248756 rgba(53, 132, 228, 255), stop:1 rgba(255, 255, 255, 255))</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>1071</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background : none;</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="pl1">
+     <attribute name="title">
+      <string>Tab 1</string>
+     </attribute>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>120</y>
+        <width>631</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <row>
+       <property name="text">
+        <string>Rendement Q/ha</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>New Row</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Main-doeuvre</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Temps machine</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>eau</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Salaire Annuel</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Frais gestion</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>Blé</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Orge</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Mais</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Bet-sucre</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Tournesol</string>
+       </property>
+      </column>
+      <item row="0" column="0">
+       <property name="text">
+        <string>75</string>
+       </property>
+      </item>
+      <item row="0" column="1">
+       <property name="text">
+        <string>60</string>
+       </property>
+      </item>
+      <item row="0" column="2">
+       <property name="text">
+        <string>55</string>
+       </property>
+      </item>
+      <item row="0" column="3">
+       <property name="text">
+        <string>50</string>
+       </property>
+      </item>
+      <item row="0" column="4">
+       <property name="text">
+        <string>60</string>
+       </property>
+      </item>
+      <item row="1" column="0">
+       <property name="text">
+        <string>60</string>
+       </property>
+      </item>
+      <item row="1" column="1">
+       <property name="text">
+        <string>50</string>
+       </property>
+      </item>
+      <item row="1" column="2">
+       <property name="text">
+        <string>66</string>
+       </property>
+      </item>
+      <item row="1" column="3">
+       <property name="text">
+        <string>110</string>
+       </property>
+      </item>
+      <item row="1" column="4">
+       <property name="text">
+        <string>60</string>
+       </property>
+      </item>
+      <item row="2" column="0">
+       <property name="text">
+        <string>2</string>
+       </property>
+      </item>
+      <item row="2" column="1">
+       <property name="text">
+        <string>1</string>
+       </property>
+      </item>
+      <item row="2" column="2">
+       <property name="text">
+        <string>2</string>
+       </property>
+      </item>
+      <item row="2" column="3">
+       <property name="text">
+        <string>3</string>
+       </property>
+      </item>
+      <item row="2" column="4">
+       <property name="text">
+        <string>2</string>
+       </property>
+      </item>
+      <item row="3" column="0">
+       <property name="text">
+        <string>30</string>
+       </property>
+      </item>
+      <item row="3" column="1">
+       <property name="text">
+        <string>24</string>
+       </property>
+      </item>
+      <item row="3" column="2">
+       <property name="text">
+        <string>20</string>
+       </property>
+      </item>
+      <item row="3" column="3">
+       <property name="text">
+        <string>28</string>
+       </property>
+      </item>
+      <item row="3" column="4">
+       <property name="text">
+        <string>25</string>
+       </property>
+      </item>
+      <item row="4" column="0">
+       <property name="text">
+        <string>3000</string>
+       </property>
+      </item>
+      <item row="4" column="1">
+       <property name="text">
+        <string>2000</string>
+       </property>
+      </item>
+      <item row="4" column="2">
+       <property name="text">
+        <string>2500</string>
+       </property>
+      </item>
+      <item row="4" column="3">
+       <property name="text">
+        <string>3800</string>
+       </property>
+      </item>
+      <item row="4" column="4">
+       <property name="text">
+        <string>3200</string>
+       </property>
+      </item>
+      <item row="5" column="0">
+       <property name="text">
+        <string>500</string>
+       </property>
+      </item>
+      <item row="5" column="1">
+       <property name="text">
+        <string>500</string>
+       </property>
+      </item>
+      <item row="5" column="2">
+       <property name="text">
+        <string>600</string>
+       </property>
+      </item>
+      <item row="5" column="3">
+       <property name="text">
+        <string>700</string>
+       </property>
+      </item>
+      <item row="5" column="4">
+       <property name="text">
+        <string>550</string>
+       </property>
+      </item>
+      <item row="6" column="0">
+       <property name="text">
+        <string>250</string>
+       </property>
+      </item>
+      <item row="6" column="1">
+       <property name="text">
+        <string>180</string>
+       </property>
+      </item>
+      <item row="6" column="2">
+       <property name="text">
+        <string>190</string>
+       </property>
+      </item>
+      <item row="6" column="3">
+       <property name="text">
+        <string>310</string>
+       </property>
+      </item>
+      <item row="6" column="4">
+       <property name="text">
+        <string>320</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>908</x>
+        <y>474</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color :rgb(51, 209, 122);</string>
+      </property>
+      <property name="text">
+       <string>Executer</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="pl2">
+     <attribute name="title">
+      <string>Tab 2</string>
+     </attribute>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1133</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
