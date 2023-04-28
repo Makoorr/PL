@@ -7,7 +7,6 @@ from PyQt5.uic import loadUi
 import sys
 import os
 
-
 class Ui_MainWindow(QtWidgets.QMainWindow):
     def __init__(self, parent=None):
         super(Ui_MainWindow, self).__init__()
