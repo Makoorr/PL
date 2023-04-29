@@ -25,15 +25,19 @@ x = model.addVars(range(5), range(3), name="x") # x[i, j] = quantité transport�
 usine = model.addVars(range(5), vtype=gp.GRB.BINARY, name="usine") # usine[i] = 1 si l'usine i est ouverte
 depot = model.addVars(range(3), vtype=gp.GRB.BINARY, name="depot") # depot[j] = 1 si le dépot j est ouvert
 
+# Fonction objectif
+model.setObjective(
+    gp.quicksum(prix_usinedepot[i][j] * x[i, j] for i in range(5) for j in range(3))
+    + gp.quicksum(prix_depotclient[j][k] * x[i, j] for i in range(5) for j in range(3) for k in range(4))
+    + gp.quicksum(frais[i] * usine[i] for i in range(5))
+    + gp.quicksum(frais[len(range(5)) + j] * depot[j] for j in range(3)), gp.GRB.MINIMIZE)
+
 # Contraintes
 for i in range(5):
     model.addConstr(gp.quicksum(x[i, j] for j in range(3)) <= capacite_prod[i] * usine[i], name=f"capacite_usine_{i}")
 for j in range(3):
     for k in range(4):
         model.addConstr(gp.quicksum(x[i, j] for i in range(5)) >= demande[k], name=f"demande_client_{j}_{k}")
-
-# Fonction objectif
-model.setObjective(gp.quicksum(prix_usinedepot[i][j] * x[i, j] for i in range(5) for j in range(3)) + gp.quicksum(prix_depotclient[j][k] * x[i, j] for i in range(5) for j in range(3) for k in range(4)) + gp.quicksum(frais[i] * usine[i] for i in range(5)) + gp.quicksum(frais[len(range(5)) + j] * depot[j] for j in range(3)), gp.GRB.MINIMIZE)
 
 # Résolution
 model.optimize()

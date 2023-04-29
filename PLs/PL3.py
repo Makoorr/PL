@@ -1,5 +1,4 @@
 import gurobipy as gp
-from gurobipy import GRB
 
 # Initialiser les paramètres du problème
 jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
@@ -13,10 +12,10 @@ employes = range(nb_employes)
 model = gp.Model("Planification")
 
 # Ajouter les variables
-travail = model.addVars(employes, jours_semaine, vtype=GRB.BINARY, name="travail")
+travail = model.addVars(employes, jours_semaine, vtype=gp.GRB.BINARY, name="travail")
 
 # Définir la fonction objective
-model.setObjective(gp.quicksum(travail[i, j] for i in employes for j in jours_semaine), GRB.MINIMIZE)
+model.setObjective(gp.quicksum(travail[i, j] for i in employes for j in jours_semaine), gp.GRB.MINIMIZE)
 
 # Ajouter les contraintes
 # Chaque employé doit travailler pendant cinq jours consécutifs avant de prendre deux jours de congé
@@ -34,7 +33,7 @@ for j in jours_semaine:
 model.optimize()
 
 # Afficher les résultats
-if model.status == GRB.OPTIMAL:
+if model.status == gp.GRB.OPTIMAL:
     print("Solution optimale trouvée")
     for i in employes:
         print("Employé %d : " % i, end="")
