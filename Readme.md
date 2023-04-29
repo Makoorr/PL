@@ -1,3 +1,3 @@
 # TO BUILD THE FILE
-! pip install pyinstaller
+! pip install pyinstaller\
 ! pyinstaller main.spec
