@@ -1,3 +1,6 @@
-# TO BUILD THE FILE
-! pip install pyinstaller\
-! pyinstaller main.spec
+# To build the file
+pip install pyinstaller\
+pyinstaller main.spec
+
+# Run the program after building
+run dist/PL.exe
