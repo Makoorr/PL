@@ -6,6 +6,7 @@ pyinstaller main.spec
 run dist/PL.exe
 
 # Screenshot of the executable
-![Uploading capture.png…]()
+![Executable Screenshot](img/capture.png?raw=true "Screenshot of PL1")
 
 # After executing
+![After Executing](img/captureexec.png?raw=true "Executing PL1")
