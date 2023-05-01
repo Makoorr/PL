@@ -35,13 +35,16 @@ class PL9:
         model.optimize()
 
         # Affichage des resultats
+        resultat = ""
         for i in range(5):
             for j in range(3):
                 if x[i, j].x != 0:
-                    print("Usine", i+1, "--> Depot", j+1, ":", x[i, j].x)
+                    resultat += "Usine "+ str(i+1)+ " --> Depot "+ str(j+1)+ " : "+ str(x[i, j].x)
                     for k in range(4):
-                        print("Client", k+1, ":", self.prix_depotclient[j][k])
-                    print("-----------------------------------------------")
+                        resultat += "\nClient "+ str(k+1)+ " : " + str(self.prix_depotclient[j][k])
+                    resultat += "\n-----------------------------------------------\n"
+        resultat += "Coût total : " + str(model.objVal)
+        return resultat
 
 if "__main__"== __name__:
     # Paramètres du problème par défaut
@@ -62,4 +65,4 @@ if "__main__"== __name__:
     frais = [35000, 45000, 40000, 42000, 40000, 40000, 20000, 60000] # Prix Fixe
 
     pl9 = PL9(capacite_prod,prix_usinedepot,prix_depotclient,demande,frais)
-    pl9.run()
+    print(pl9.run())

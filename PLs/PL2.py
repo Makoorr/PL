@@ -32,11 +32,13 @@ class PL2:
         model.optimize()
 
         # Affichage des résultats
-        print("Mixage optimal :")
-        print("Gazoline :", gazoline.x)
-        print("Pétrole de chauffage :", chauffage.x)
-        print("Profit total :", model.objVal, "DT")
+        resultat = "Mixage optimal :"
+        resultat += "\nGazoline : "+ str(gazoline.x)
+        resultat += "\nPétrole de chauffage : "+ str(chauffage.x)
+        resultat += "\nProfit total : "+ str(model.objVal) + "DT"
+
+        return resultat
 
 if "__main__" == __name__:
     pl2 = PL2()
-    pl2.run()
+    print(pl2.run())

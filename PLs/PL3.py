@@ -39,6 +39,7 @@ class PL3:
         for i in range(7):
             val = model.objVal - ( nb[i] + nb[i-1] )
             result += "%s: %d employés.\n" % (self.jour[i],val)
+        result += "Nombre d'employes : " + str(int(model.objVal))
         return result
 
 

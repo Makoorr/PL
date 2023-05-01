@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Programmation Lineaire</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: qconicalgradient(cx:1, cy:1, angle:292, stop:0.248756 rgba(53, 132, 228, 255), stop:1 rgba(255, 255, 255, 255))</string>
@@ -33,20 +33,20 @@
      <string notr="true">background-color: none;</string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="pl1">
      <property name="styleSheet">
       <string notr="true">background-color: transparent;</string>
      </property>
      <attribute name="title">
-      <string>Tab 1</string>
+      <string>PL1</string>
      </attribute>
      <widget class="QTableWidget" name="pl1Parametres">
       <property name="geometry">
        <rect>
-        <x>230</x>
-        <y>100</y>
+        <x>50</x>
+        <y>160</y>
         <width>611</width>
         <height>241</height>
        </rect>
@@ -315,8 +315,8 @@
      <widget class="QTableWidget" name="pl1Constantes">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>390</y>
+        <x>750</x>
+        <y>210</y>
         <width>217</width>
         <height>116</height>
        </rect>
@@ -360,16 +360,36 @@
        </property>
       </item>
      </widget>
+     <widget class="QTextBrowser" name="textBrowser">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>50</y>
+        <width>761</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;L’Etat tunisien veut mettre en valeur une zone agricole de 1000 hectares ou cinq cultures sont à priori possibles : le blé, l’orge, le mais, la betterave à sucre et le tournesol. On dispose des données suivantes sur les cinq cultures:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="pl2">
      <attribute name="title">
-      <string>Tab 2</string>
+      <string>PL2</string>
      </attribute>
      <widget class="QTextBrowser" name="pl2TextBrowser">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>140</y>
+        <x>110</x>
+        <y>70</y>
         <width>821</width>
         <height>161</height>
        </rect>
@@ -378,8 +398,8 @@
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Une compagnie pétrolière a 5000 barils de pétrole brut de type 1 et 10000 barils de pétrole brut de type 2. La compagnie vend du gazoline et du pétrole de chauffage, qui sont obtenus à partir du mixage des deux type de brut. Chaque baril de type 1 a un niveau de qualité 10 et celui de type 2 un niveau de qualité 5. Un baril est considéré comme gazoline s’il a un niveau de qualité minimum de 8. Il considéré comme pétrole de chauffage s’il est de qualité minimum de 6. Un baril de gazoline se vend à 25 D, alors qu’un baril de pétrole de chauffage se vend à 20 D. Les frais de marketing associé à la vente d’un baril sont estimés à 0,2 D pour un baril de Gazoline et 0,1 D pour un baril de pétrole à chauffage. La demande de ces deux produits est supposée illimitée de sorte que tout ce qui est produit peut être vendu. Déterminer le mixage optimal.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;Une compagnie pétrolière a 5000 barils de pétrole brut de type 1 et 10000 barils de pétrole brut de type 2. La compagnie vend du gazoline et du pétrole de chauffage, qui sont obtenus à partir du mixage des deux type de brut. Chaque baril de type 1 a un niveau de qualité 10 et celui de type 2 un niveau de qualité 5. Un baril est considéré comme gazoline s’il a un niveau de qualité minimum de 8. Il considéré comme pétrole de chauffage s’il est de qualité minimum de 6. Un baril de gazoline se vend à 25 D, alors qu’un baril de pétrole de chauffage se vend à 20 D. Les frais de marketing associé à la vente d’un baril sont estimés à 0,2 D pour un baril de Gazoline et 0,1 D pour un baril de pétrole à chauffage. La demande de ces deux produits est supposée illimitée de sorte que tout ce qui est produit peut être vendu. Déterminer le mixage optimal.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pl2PushButton">
@@ -398,16 +418,96 @@ p, li { white-space: pre-wrap; }
        <string>Executer</string>
       </property>
      </widget>
+     <widget class="QTableWidget" name="pl2Parametres">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>270</y>
+        <width>301</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <row>
+       <property name="text">
+        <string>niveau qualite</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>nombre barils</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>prix vente</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>frais marketing</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>Type 1</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Type 2</string>
+       </property>
+      </column>
+      <item row="0" column="0">
+       <property name="text">
+        <string>10</string>
+       </property>
+      </item>
+      <item row="0" column="1">
+       <property name="text">
+        <string>5</string>
+       </property>
+      </item>
+      <item row="1" column="0">
+       <property name="text">
+        <string>5000</string>
+       </property>
+      </item>
+      <item row="1" column="1">
+       <property name="text">
+        <string>10000</string>
+       </property>
+      </item>
+      <item row="2" column="0">
+       <property name="text">
+        <string>25</string>
+       </property>
+      </item>
+      <item row="2" column="1">
+       <property name="text">
+        <string>20</string>
+       </property>
+      </item>
+      <item row="3" column="0">
+       <property name="text">
+        <string>0.2</string>
+       </property>
+      </item>
+      <item row="3" column="1">
+       <property name="text">
+        <string>0.1</string>
+       </property>
+      </item>
+     </widget>
     </widget>
     <widget class="QWidget" name="pl3">
      <attribute name="title">
-      <string>Page</string>
+      <string>PL3</string>
      </attribute>
-     <widget class="QTableWidget" name="pl3tableWidget">
+     <widget class="QTableWidget" name="pl3Parametres">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>190</y>
+        <x>110</x>
+        <y>220</y>
         <width>821</width>
         <height>61</height>
        </rect>
@@ -491,25 +591,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QTextBrowser" name="pl3textBrowser_2">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>70</y>
-        <width>821</width>
-        <height>91</height>
-       </rect>
-      </property>
-      <property name="html">
-       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Un bureau de poste a des besoins en personnel lors des sept jours de la semaine, donnés par le tableau suivant : Jour Lundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche Minimun requis 17 13 15 19 14 16 11.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QTextBrowser" name="pl3textBrowser_3">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>270</y>
+        <x>110</x>
+        <y>80</y>
         <width>821</width>
         <height>61</height>
        </rect>
@@ -518,8 +601,25 @@ p, li { white-space: pre-wrap; }
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Déterminer la planification permettant de satisfaire les besoins du bureau en recourant au minimun d’employés tout en sachant que chaque employé doit travailler pendant cinq jours consécutifs avant de prendre deux jours de congé. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;Un bureau de poste a des besoins en personnel lors des sept jours de la semaine, donnés par le tableau suivant : Jour Lundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche Minimun requis 17 13 15 19 14 16 11.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="pl3textBrowser_3">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>350</y>
+        <width>821</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;Déterminer la planification permettant de satisfaire les besoins du bureau en recourant au minimun d’employés tout en sachant que chaque employé doit travailler pendant cinq jours consécutifs avant de prendre deux jours de congé. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pl3PushButton">
@@ -541,7 +641,7 @@ p, li { white-space: pre-wrap; }
     </widget>
     <widget class="QWidget" name="pl7">
      <attribute name="title">
-      <string>Page</string>
+      <string>PL7</string>
      </attribute>
      <widget class="QTextBrowser" name="pl7textBrowser_2">
       <property name="geometry">
@@ -556,8 +656,8 @@ p, li { white-space: pre-wrap; }
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Une Société a lancé un appel d’offre pour huit projets. Six entreprises ont répondu par des offres conformément au tableau suivant. On veut déterminer l’affectation optimale permettant de réalisé les huit projets à un coût minimun tout en considérant que &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;Une Société a lancé un appel d’offre pour huit projets. Six entreprises ont répondu par des offres conformément au tableau suivant. On veut déterminer l’affectation optimale permettant de réalisé les huit projets à un coût minimun tout en considérant que &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QTextBrowser" name="pl7textBrowser">
@@ -573,13 +673,13 @@ p, li { white-space: pre-wrap; }
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1. Toute entreprise sans offre pour un projet ne peut être sélectionné pour ce projet. &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2. Exactement une entreprise pour un projet. &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;3. Une entreprise ne peut réalisé plus de deux projets.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;1. Toute entreprise sans offre pour un projet ne peut être sélectionné pour ce projet. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;2. Exactement une entreprise pour un projet. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;3. Une entreprise ne peut réalisé plus de deux projets.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QTableWidget" name="pl6tableWidget">
+     <widget class="QTableWidget" name="pl7Parametres">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -863,7 +963,7 @@ p, li { white-space: pre-wrap; }
     </widget>
     <widget class="QWidget" name="pl9">
      <attribute name="title">
-      <string>Page</string>
+      <string>PL9</string>
      </attribute>
      <widget class="QTextBrowser" name="pl9textBrowser">
       <property name="geometry">
@@ -878,17 +978,17 @@ p, li { white-space: pre-wrap; }
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tomo producteur de conserve de tomate veut déterminer les usines et les dépôts qu’elle doit avoir pour optimiser&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;son exploitation. Cinq usines et trois dépôts sont sous considération. Les capacités de production (en tonnes) des&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;usines sont données par le tableau 1. Les coûts de production et de transport d’une tonne de conserve d’une usine&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vers un dépôt sont donnés par le tableau 2. Les coûts de transport d’une tonne de conserve d’un dépôt à un client&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;donné parmi les quatre clients de l’entreprise sont donnés par le tableau 3. Le tableau 4 donne les quantités (en&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;tonnes) requises par chacun des quatre clients. Le tableau 5 donne les coûts fixes annuels. Développer un système&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;pour aider à prendre la meilleure décision.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;Tomo producteur de conserve de tomate veut déterminer les usines et les dépôts qu’elle doit avoir pour optimiser&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;son exploitation. Cinq usines et trois dépôts sont sous considération. Les capacités de production (en tonnes) des&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;usines sont données par le tableau 1. Les coûts de production et de transport d’une tonne de conserve d’une usine&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;vers un dépôt sont donnés par le tableau 2. Les coûts de transport d’une tonne de conserve d’un dépôt à un client&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;donné parmi les quatre clients de l’entreprise sont donnés par le tableau 3. Le tableau 4 donne les quantités (en&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;tonnes) requises par chacun des quatre clients. Le tableau 5 donne les coûts fixes annuels. Développer un système&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;pour aider à prendre la meilleure décision.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QTableWidget" name="pl9tableWidget1">
+     <widget class="QTableWidget" name="pl9Parametres1">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -953,7 +1053,7 @@ p, li { white-space: pre-wrap; }
        </property>
       </item>
      </widget>
-     <widget class="QTableWidget" name="pl9tableWidget2">
+     <widget class="QTableWidget" name="pl9Parametres2">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -1078,7 +1178,7 @@ p, li { white-space: pre-wrap; }
        </property>
       </item>
      </widget>
-     <widget class="QTableWidget" name="pl9tableWidget3">
+     <widget class="QTableWidget" name="pl9Parametres3">
       <property name="geometry">
        <rect>
         <x>420</x>
@@ -1183,7 +1283,7 @@ p, li { white-space: pre-wrap; }
        </property>
       </item>
      </widget>
-     <widget class="QTableWidget" name="pl9tableWidget4">
+     <widget class="QTableWidget" name="pl9Parametres4">
       <property name="geometry">
        <rect>
         <x>420</x>
@@ -1238,7 +1338,7 @@ p, li { white-space: pre-wrap; }
        </property>
       </item>
      </widget>
-     <widget class="QTableWidget" name="pl9tableWidget5">
+     <widget class="QTableWidget" name="pl9Parametres5">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -1352,13 +1452,14 @@ p, li { white-space: pre-wrap; }
     </widget>
    </widget>
   </widget>
+  <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>1133</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuPLs">
@@ -1368,7 +1469,6 @@ p, li { white-space: pre-wrap; }
    </widget>
    <addaction name="menuPLs"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

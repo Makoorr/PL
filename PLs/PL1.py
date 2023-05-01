@@ -44,9 +44,6 @@ class PL1:
         resultat = ""
         for i,v in enumerate(model.getVars()):
             resultat += '%s: %g\n--------------\n' % (self.names[i], v.x)
-        
-        # Delete the model
-        model.dispose()
 
         return resultat
 
