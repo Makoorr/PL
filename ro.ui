@@ -33,7 +33,7 @@
      <string notr="true">background-color: none;</string>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="pl1">
      <property name="styleSheet">
