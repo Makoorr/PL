@@ -12,8 +12,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         ui_path = os.path.dirname(os.path.abspath(__file__))
         uic.loadUi(os.path.join(ui_path, "ro.ui"), self)
     
+     
         # Connection des buttons
         self.pl1PushButton.clicked.connect(self.onPl1ButtonClicked)
+        # self.pl2PushButton.clicked.connect(self.onPl2ButtonClicked)
+        # self.pl3PushButton.clicked.connect(self.onPl3ButtonClicked)
+        # self.pl7PushButton.clicked.connect(self.onPl4ButtonClicked)
+        # self.pl9PushButton.clicked.connect(self.onPl5ButtonClicked)
 
     def getTableValues(self, table):
         values = []
