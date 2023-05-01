@@ -20,7 +20,7 @@
    <widget class="QTabWidget" name="tabs">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>20</x>
       <y>20</y>
       <width>1071</width>
       <height>571</height>
@@ -33,7 +33,7 @@
      <string notr="true">background-color: none;</string>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="pl1">
      <property name="styleSheet">
@@ -365,7 +365,7 @@
      <attribute name="title">
       <string>Tab 2</string>
      </attribute>
-     <widget class="QTextBrowser" name="textBrowser">
+     <widget class="QTextBrowser" name="pl2TextBrowser">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -403,7 +403,7 @@ p, li { white-space: pre-wrap; }
      <attribute name="title">
       <string>Page</string>
      </attribute>
-     <widget class="QTableWidget" name="tableWidget">
+     <widget class="QTableWidget" name="pl3tableWidget">
       <property name="geometry">
        <rect>
         <x>60</x>
@@ -488,7 +488,7 @@ p, li { white-space: pre-wrap; }
        </property>
       </item>
      </widget>
-     <widget class="QTextBrowser" name="textBrowser_2">
+     <widget class="QTextBrowser" name="pl3textBrowser_2">
       <property name="geometry">
        <rect>
         <x>60</x>
@@ -505,7 +505,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Un bureau de poste a des besoins en personnel lors des sept jours de la semaine, donnés par le tableau suivant : Jour Lundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche Minimun requis 17 13 15 19 14 16 11.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QTextBrowser" name="textBrowser_3">
+     <widget class="QTextBrowser" name="pl3textBrowser_3">
       <property name="geometry">
        <rect>
         <x>60</x>
@@ -539,11 +539,11 @@ p, li { white-space: pre-wrap; }
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="pl9">
+    <widget class="QWidget" name="pl7">
      <attribute name="title">
       <string>Page</string>
      </attribute>
-     <widget class="QTextBrowser" name="textBrowser_5">
+     <widget class="QTextBrowser" name="pl7textBrowser_2">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -560,7 +560,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Une Société a lancé un appel d’offre pour huit projets. Six entreprises ont répondu par des offres conformément au tableau suivant. On veut déterminer l’affectation optimale permettant de réalisé les huit projets à un coût minimun tout en considérant que &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QTextBrowser" name="textBrowser_6">
+     <widget class="QTextBrowser" name="pl7textBrowser">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -579,7 +579,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;3. Une entreprise ne peut réalisé plus de deux projets.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QTableWidget" name="tableWidget_3">
+     <widget class="QTableWidget" name="pl6tableWidget">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -844,7 +844,7 @@ p, li { white-space: pre-wrap; }
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="pl9PushButton">
+     <widget class="QPushButton" name="pl7PushButton">
       <property name="geometry">
        <rect>
         <x>900</x>
@@ -861,11 +861,11 @@ p, li { white-space: pre-wrap; }
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="pl6">
+    <widget class="QWidget" name="pl9">
      <attribute name="title">
       <string>Page</string>
      </attribute>
-     <widget class="QTextBrowser" name="textBrowser_4">
+     <widget class="QTextBrowser" name="pl9textBrowser">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -888,7 +888,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;pour aider à prendre la meilleure décision.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QTableWidget" name="tableWidget_2">
+     <widget class="QTableWidget" name="pl9tableWidget1">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -953,7 +953,7 @@ p, li { white-space: pre-wrap; }
        </property>
       </item>
      </widget>
-     <widget class="QTableWidget" name="tableWidget_4">
+     <widget class="QTableWidget" name="pl9tableWidget2">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -1078,7 +1078,7 @@ p, li { white-space: pre-wrap; }
        </property>
       </item>
      </widget>
-     <widget class="QTableWidget" name="tableWidget_5">
+     <widget class="QTableWidget" name="pl9tableWidget3">
       <property name="geometry">
        <rect>
         <x>420</x>
@@ -1183,7 +1183,7 @@ p, li { white-space: pre-wrap; }
        </property>
       </item>
      </widget>
-     <widget class="QTableWidget" name="tableWidget_6">
+     <widget class="QTableWidget" name="pl9tableWidget4">
       <property name="geometry">
        <rect>
         <x>420</x>
@@ -1238,7 +1238,7 @@ p, li { white-space: pre-wrap; }
        </property>
       </item>
      </widget>
-     <widget class="QTableWidget" name="tableWidget_7">
+     <widget class="QTableWidget" name="pl9tableWidget5">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -1333,7 +1333,7 @@ p, li { white-space: pre-wrap; }
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="pl9PushButton_2">
+     <widget class="QPushButton" name="pl9PushButton">
       <property name="geometry">
        <rect>
         <x>920</x>
