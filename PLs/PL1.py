@@ -17,7 +17,8 @@ class PL1:
     def run(self):
         model = gp.Model("PL1")
 
-        x = model.addVars(range(5) , name="x")
+        # Variables de décision : quantité de chaque culture à planter
+        x = model.addVars(range(5), vtype=gp.GRB.INTEGER, name="x")
 
         # Fonction d'objective
         model.setObjective(gp.quicksum( x[i] * (
