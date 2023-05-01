@@ -30,7 +30,7 @@
      <string notr="true">background : none;</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="pl1">
      <attribute name="title">
