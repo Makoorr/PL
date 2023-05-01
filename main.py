@@ -2,7 +2,6 @@
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QApplication, QMessageBox
 import numpy as np
-from math import trunc
 from PLs.PL1 import PL1
 from PLs.PL2 import PL2
 from PLs.PL3 import PL3
@@ -138,7 +137,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         
         # Affichage des résultats
         self.showOutput(self.pl9.run())
-
 
 if "__main__" == __name__:
     app = QApplication(sys.argv)  # Création d'application
