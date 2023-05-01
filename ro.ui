@@ -21,29 +21,44 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>30</y>
+      <y>20</y>
       <width>1071</width>
       <height>571</height>
      </rect>
     </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background : none;</string>
+     <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
     </property>
     <property name="currentIndex">
      <number>1</number>
     </property>
     <widget class="QWidget" name="pl1">
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;</string>
+     </property>
      <attribute name="title">
       <string>Tab 1</string>
      </attribute>
-     <widget class="QTableWidget" name="tableWidget">
+     <widget class="QTableWidget" name="pl1Parametres">
       <property name="geometry">
        <rect>
-        <x>210</x>
-        <y>120</y>
-        <width>631</width>
+        <x>230</x>
+        <y>100</y>
+        <width>611</width>
         <height>241</height>
        </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
       </property>
       <row>
        <property name="text">
@@ -52,12 +67,12 @@
       </row>
       <row>
        <property name="text">
-        <string>New Row</string>
+        <string>Prix de Vente</string>
        </property>
       </row>
       <row>
        <property name="text">
-        <string>Main-doeuvre</string>
+        <string>Main d'oeuvre</string>
        </property>
       </row>
       <row>
@@ -67,7 +82,7 @@
       </row>
       <row>
        <property name="text">
-        <string>eau</string>
+        <string>Eau</string>
        </property>
       </row>
       <row>
@@ -281,7 +296,7 @@
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="pl1PushButton">
       <property name="geometry">
        <rect>
         <x>908</x>
@@ -297,6 +312,51 @@
        <string>Executer</string>
       </property>
      </widget>
+     <widget class="QTableWidget" name="pl1Constantes">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>390</y>
+        <width>217</width>
+        <height>116</height>
+       </rect>
+      </property>
+      <row>
+       <property name="text">
+        <string>Prix main d'oeuvre</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Eau d'irrigation</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Heure_machine</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string/>
+       </property>
+      </column>
+      <item row="0" column="0">
+       <property name="text">
+        <string>3000</string>
+       </property>
+      </item>
+      <item row="1" column="0">
+       <property name="text">
+        <string>25000000</string>
+       </property>
+      </item>
+      <item row="2" column="0">
+       <property name="text">
+        <string>24000</string>
+       </property>
+      </item>
+     </widget>
     </widget>
     <widget class="QWidget" name="pl2">
      <attribute name="title">
@@ -311,7 +371,7 @@
      <x>0</x>
      <y>0</y>
      <width>1133</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
