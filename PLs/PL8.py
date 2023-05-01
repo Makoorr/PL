@@ -7,40 +7,65 @@ class PL8:
 
     def run(self):
         # Création du modèle
-        m = gp.Model("chemin_le_plus_court")
+        model = gp.Model("PL8")
 
         # Variables de décision : binaire indiquant si un arc est utilisé ou non
-        x = m.addVars(10, 10, vtype=gp.GRB.BINARY, name="x")
+        x = model.addVars(range(10), range(10), vtype=gp.GRB.BINARY, name="x")
 
         # Fonction objectif : minimiser la somme des coûts des arcs utilisés
-        m.setObjective(gp.quicksum(self.costs[i][j] * x[i,j] for i in range(10) for j in range(10) if not np.isnan(self.costs[i][j])), gp.GRB.MINIMIZE)
+        model.setObjective(gp.quicksum(self.costs[i][j] * x[i,j] for i in range(10) for j in range(10) if not np.isnan(self.costs[i][j])), gp.GRB.MINIMIZE)
 
-        # Contrainte : il ne peut y avoir de cycle dans le graphe
-        for i in range(1, 10):
-            for j in range(1, 10):
-                if i != j:
-                    m.addConstr(x[i,j] + x[j,i] <= 1)
+        # Contrainte
+        # Noeud debut
+        model.addConstr(gp.quicksum( x[1,j] for j in range(1,4) ) == 1)
+        # Noeud fin
+        model.addConstr(gp.quicksum( x[i,9] for i in range(4,9) if (i!=7) ) == 1)
+
+        # Les parametres nulles doievent rester nulles
+        for i in range(10):
+            for j in range(10):
+                if np.isnan(self.costs[i][j]):
+                    model.addConstr(x[i,j] == 0)
+
+        for k in range(1, 9):
+            model.addConstr(gp.quicksum(x[i,k] for i in range(10) if self.costs[i-1][k-1] != 0) == gp.quicksum(x[k,j] for j in range(10) if self.costs[k-1][j-1] != 0))
 
         # Résolution du modèle
-        m.optimize()
+        model.optimize()
+        
+        # create matrix that takes 10*10 values of v.x
+        matrix = np.zeros((10,10),dtype=int)
+        tab = []
+        for i,v in enumerate(model.getVars()):
+            tab.append(v.x)
 
+        # fill the matrix with the values of tab
+        for i in range(10):
+            for j in range(10):
+                if tab[i*10+j] > 0:
+                    matrix[i][j] = int(tab[i*10+j])
+
+        resultat = ""
+        chemin = []
         # Affichage de la solution
-        if m.status == gp.GRB.OPTIMAL:
-            print(f"Coût minimal : {m.objVal}")
-            chemin = [0]
-            ville_act = 0
-            while ville_act != 9:
+        if model.status == gp.GRB.OPTIMAL:
+            for i in range(10):
                 for j in range(10):
-                    if x[ville_act, j].x > 0.9:
-                        chemin.append(j)
-                        ville_act = j
-                        break
-            print(f"Chemin le plus court : {' -> '.join(str(ville + 1) for ville in chemin)}")
+                    if matrix[i][j] == 1:
+                        resultat += "Chemin de {} à {} : {}".format(i+1,j+1,self.costs[i][j]) + "\n"
+                        chemin.append("{}".format(i+1))
+            resultat += "Coût total : {}".format(model.objVal) + "\n"
+            resultat += "Meilleur chemin: "
+
+            for i in range(len(chemin)-1):
+                resultat += chemin[i] + " -> "
+            resultat += chemin[-1]
         else:
             print("Pas de chemin optimal!")
+        return resultat
 
 
-if "__main__"== __name__:
+if "__main__" == __name__:
     # Données d'entrée : matrice des coûts entre chaque ville
     costs = [
         [np.nan, 70, 63, 56, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan],
@@ -56,4 +81,4 @@ if "__main__"== __name__:
     ]
 
     pl8 = PL8(costs)
-    pl8.run()
+    print(pl8.run())
