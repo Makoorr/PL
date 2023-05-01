@@ -5,6 +5,8 @@ from PLs.PL1 import PL1
 import sys
 import os
 
+from PLs.PL2 import PL2
+
 class Ui_MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super(Ui_MainWindow, self).__init__()
@@ -15,10 +17,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
      
         # Connection des buttons
         self.pl1PushButton.clicked.connect(self.onPl1ButtonClicked)
-        # self.pl2PushButton.clicked.connect(self.onPl2ButtonClicked)
-        # self.pl3PushButton.clicked.connect(self.onPl3ButtonClicked)
-        # self.pl7PushButton.clicked.connect(self.onPl4ButtonClicked)
-        # self.pl9PushButton.clicked.connect(self.onPl5ButtonClicked)
+        self.pl3PushButton.clicked.connect(self.onPl3ButtonClicked)
+        self.pl7PushButton.clicked.connect(self.onPl7ButtonClicked)
 
     def getTableValues(self, table):
         values = []
@@ -39,6 +39,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         msg_box.setWindowTitle("Output")
         msg_box.setText("Résultat de l'éxecution:\n\n"+ output)
         msg_box.exec_()
+
+
+        
 
     def onPl1ButtonClicked(self):
         print("Button clicked")
@@ -66,6 +69,45 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
         # Affichage des résultats
         self.showOutput(self.pl1.run())
+
+
+#PL3    
+    def onPl3ButtonClicked(self):
+        print("Button clicked")
+
+        # Réception des parametres du Tableau de PL3
+        parametres3 = self.getTableValues(self.tableWidget)
+        x1 = parametres3[0]
+        x2 = parametres3[1]
+        x3 = parametres3[2]
+        x4 = parametres3[3]
+        x5 = parametres3[4]
+        x6 = parametres3[5]
+        x7 = parametres3[6]
+
+        # Appel de la classe PL3
+        self.pl3 = PL1(x1=x1,x2=x2,x3=x3,x4=x4,x5=x5,x6=x6,x7=x7)
+
+        # Affichage des résultats
+        self.showOutput(self.pl3.run())
+
+    #pl7
+    def onPl7ButtonClicked(self):
+        print("Button clicked")
+        costs=[[]]
+        # Réception des parametres du Tableau de PL2
+        parametres7 = self.getTableValues(self.tableWidget_3)
+        for i in range(6):
+            for j in range(8):
+                costs[i][j]=parametres7[i][j]
+                
+        # Appel de la classe PL7
+        self.pl7 = PL1(costs)
+
+        # Affichage des résultats
+        self.showOutput(self.pl7.run())
+
+
 
 if "__main__" == __name__:
     app = QApplication(sys.argv)  # Création d'application
