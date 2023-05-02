@@ -1,54 +1,102 @@
 import gurobipy as gp
 
-# Initialisation des paramètres du problème
-nb_mois = 4
-nb_ouvriers_initiaux = 100
-nb_heures_travail_par_ouvrier = 160
-nb_heures_max_supplementaires = 20
-cout_recrutement_ouvrier = 1600
-cout_licenciement_ouvrier = 2000
-cout_stockage_paire_chaussure = 3
-cout_heure_supplementaire_ouvrier = 13
-cout_mat_paire_chaussure = 15
-heures_travail_paire_chaussure = 4
-demande_par_mois = [3000, 5000, 2000, 1000]
-stock_initial = 500
+class PL4:
+    def __init__(self,C,Cs,D,Sal,Hsup,R,L,h,H,Hmax):
+        self.C = C
+        self.Cs = Cs
+        self.D = D
+        self.Sal = Sal
+        self.Hsup = Hsup
+        self.R = R
+        self.L = L
+        self.h = h
+        self.H = H
+        self.Hmax = Hmax
 
-# Initialisation du modèle
-model = gp.Model("ChausseTous")
+    def run(self):
+        # Modèle d'optimisation
+        model = gp.Model()
 
-# Déclaration des variables
-x = {}
-y = {}
-for t in range(nb_mois):
-    x[t] = model.addVar(vtype=gp.GRB.INTEGER, name="production_%s" % t)
-    y[t] = model.addVar(vtype=gp.GRB.INTEGER, name="ouvriers_%s" % t)
+        # Variables de décision
+        NHS = model.addVars(range(4), vtype=gp.GRB.INTEGER, lb=0, name="NHS")  # Nombre d'heures supplémentaires par mois
+        NCH = model.addVars(range(4), vtype=gp.GRB.INTEGER, lb=0, name="NCH")  # Nombre de paires de chaussures fabriquées par mois
+        NOR = model.addVars(range(4), vtype=gp.GRB.INTEGER, lb=0, name="NOR")  # Nombre d'ouvriers recrutés par mois
+        NOL = model.addVars(range(4), vtype=gp.GRB.INTEGER, lb=0, name="NOL")  # Nombre d'ouvriers licenciés par mois
+        S = model.addVars(range(5), vtype=gp.GRB.INTEGER, lb=0, name="S")  # Stock de paires de chaussures par mois
+        NO = model.addVars(range(5), vtype=gp.GRB.INTEGER, lb=0, name="NO")  # Nombre d'ouvriers disponibles par mois
 
-# Fonction objectif
-model.setObjective(
-    gp.quicksum(y[t] * cout_recrutement_ouvrier for t in range(nb_mois) if y[t] > 0)
-    + gp.quicksum(y[t] * cout_licenciement_ouvrier for t in range(nb_mois) if y[t] < 0)
-    + gp.quicksum(
-        x[t] * cout_mat_paire_chaussure + y[t] * nb_heures_travail_par_ouvrier * 1500
-        + (x[t] * heures_travail_paire_chaussure - y[t] * nb_heures_travail_par_ouvrier, nb_heures_max_supplementaires) * cout_heure_supplementaire_ouvrier
-        + (stock_initial * cout_stockage_paire_chaussure)
-        for t in range(nb_mois)
-    ),
-    gp.GRB.MINIMIZE,
-)
+        # Fonction objectif
+        obj = (gp.quicksum(self.Cs * S[i] for i in range(5))
+            + gp.quicksum(self.Sal * NO[i] for i in range(5))
+            + gp.quicksum(self.Hsup * NHS[i] for i in range(4))
+            + gp.quicksum(self.R * NOR[i] for i in range(4))
+            + gp.quicksum(self.L * NOL[i] for i in range(4))
+            + gp.quicksum(self.C * NCH[i] for i in range(4)))
+        model.setObjective(obj, sense=gp.GRB.MINIMIZE)
 
-# Ajout des contraintes
-model.addConstr(y[0] == nb_ouvriers_initiaux)
-for t in range(1, nb_mois):
-    model.addConstr(y[t] >= y[t-1] - gp.ceil((nb_ouvriers_initiaux - y[0])/5))
-    model.addConstr(y[t] <= y[t-1] + gp.floor((y[0] - nb_ouvriers_initiaux)/5))
-for t in range(nb_mois):
-    model.addConstr(x[t] * heures_travail_paire_chaussure <= y[t] * nb_heures_travail_par_ouvrier + nb_heures_max_supplementaires)
+        # Contraintes
 
-# Résolution
-model.optimize()
+        # Les heures supplémentaires
+        for i in range(4):
+            model.addConstr(NHS[i] <= 20 * NO[i])
 
-# Affichage des résultats
-print("Plan de production optimal :")
-for t in range(nb_mois):
-    print("Mois %s : %s" % (t+1, int(x[t].x)))
+        # La production & la demande
+        model.addConstr(S[0] + NCH[0] >= 3000)
+        model.addConstr(S[1] + NCH[1] >= 5000)
+        model.addConstr(S[2] + NCH[2] >= 2000)
+        model.addConstr(S[3] + NCH[3] >= 1000)
+
+        # La production & les heures de travail
+        for i in range(4):
+            model.addConstr(NCH[i] <= (1/4) * (NHS[i] + NO[i] * 160))
+
+        # Effectif
+        model.addConstr(NO[0] == 100)
+        for i in range(3):
+            model.addConstr(NO[i+1] == NO[i] + NOR[i] - NOL[i])
+
+        # Stock
+        model.addConstr(S[0] == 500)
+        model.addConstr(S[1] == S[0] + NCH[0] - 3000)
+        model.addConstr(S[2] == S[1] + NCH[1] - 5000)
+        model.addConstr(S[3] == S[2] + NCH[2] - 2000)
+        model.addConstr(S[4] == S[3] + NCH[3] - 1000)
+
+        # Optimisation
+        model.optimize()
+
+        # Affichage des résultats
+        print("Solution optimale:")
+        for i in range(4):
+            print("NHS[{}] = {}".format(i, int(NHS[i].x)))
+            print("NCH[{}] = {}".format(i, int(NCH[i].x)))
+            print("NOR[{}] = {}".format(i, int(NOR[i].x)))
+            print("NOL[{}] = {}".format(i, int(NOL[i].x)))
+            print("S[{}] = {}".format(i, int(S[i].x)))
+            print("NO[{}] = {}".format(i, int(NO[i].x)))
+
+        # # Signe
+        # for i in range(4):
+        #     model.addConstr(S[i] >= 0)
+        #     model.addConstr(NO[i] >= 0)
+        #     model.addConstr(NOR[i] >= 0)
+        #     model.addConstr(NOL[i] >= 0)
+        #     model.addConstr(NHS[i] >= 0)
+
+
+
+if "__main__" == __name__:
+    # Données du problème
+    C = 15  # Coût de production d'une paire de chaussure par mois
+    Cs = 3  # Coût de stockage d'une paire de chaussure par mois
+    D = [0, 3000, 5000, 2000, 1000]  # Demande de paires de chaussures par mois
+    Sal = 1500  # Salaire d'un ouvrier par mois
+    Hsup = 13  # Coût d'une heure supplémentaire par ouvrier
+    R = 1600  # Frais de recrutement d'un ouvrier
+    L = 2000  # Frais de licenciement d'un ouvrier
+    h = 1  # Nombre d'heures nécessaires pour fabriquer une paire de chaussure
+    H = 160  # Volume horaire mensuel de travail par ouvrier
+    Hmax = 20  # Nombre d'heures supplémentaires max par ouvrier
+
+    pl4 = PL4(C,Cs,D,Sal,Hsup,R,L,h,H,Hmax)
+    pl4.run()

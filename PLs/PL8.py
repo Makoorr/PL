@@ -59,7 +59,7 @@ class PL8:
 
             for i in range(len(chemin)-1):
                 resultat += chemin[i] + " -> "
-            resultat += chemin[-1]
+            resultat += chemin[-1] + " -> 10"
         else:
             print("Pas de chemin optimal!")
         return resultat
